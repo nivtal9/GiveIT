@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Mappings\Category.hbm.xml" />
+    <None Remove="Mappings\Image.hbm.xml" />
+    <None Remove="Mappings\Item.hbm.xml" />
+    <None Remove="Mappings\Location.hbm.xml" />
+    <None Remove="Mappings\Notification.hbm.xml" />
+    <None Remove="Mappings\Status.hbm.xml" />
+    <None Remove="Mappings\SubCategory.hbm.xml" />
+    <None Remove="Mappings\User.hbm.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\Notification.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Image.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Category.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Status.hbm.xml" />
+    <EmbeddedResource Include="Mappings\SubCategory.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Location.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Item.hbm.xml" />
+    <EmbeddedResource Include="Mappings\User.hbm.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="CloudinaryDotNet" Version="1.20.0" />
+    <PackageReference Include="IKVM" Version="8.4.5" />
+    <PackageReference Include="MailKit" Version="3.6.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.2" />
+    <PackageReference Include="NHibernate" Version="5.4.1" />
+    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="3.21.90" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.27.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Material\diagram\" />
+  </ItemGroup>
+
+</Project>

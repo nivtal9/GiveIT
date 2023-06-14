@@ -1,0 +1,124 @@
+.container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  background-image: url('../../../assets/home-page/4.jpg');
+  height: 100vh;
+  align-self: center;
+  background-size: cover;
+  align-items: center;
+}
+.inner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 50px;
+  background-color: white;
+  padding: 100px 210px;
+  opacity: 0.95;
+  border-radius: 20px;
+}
+
+input {
+  width: 400px;
+  height: 52px;
+  border: 0.5px solid #000000;
+  border: none;
+  border-bottom: 1px solid black;
+  opacity: 0.5;
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 1.97px;
+  outline: none;
+}
+input:focus {
+  opacity: 1;
+}
+input::-webkit-input-placeholder {
+  align-items: center;
+}
+h2 {
+  height: 26px;
+  font-weight: 200;
+  font-size: 24px;
+  line-height: 26px;
+  text-align: center;
+  letter-spacing: 2.67px;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 0;
+}
+
+.submit-button {
+  width: 206px;
+  height: 48px;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 2.67px;
+  color: white;
+  background: #979797;
+  border: none;
+  cursor: pointer;
+}
+
+.back-button{
+  width: 206px;
+  height: 48px;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 2.67px;
+  color: white;
+  background:black;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.titles-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 14px;
+}
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: 35px;
+}
+.submit-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-top: 40px;
+}
+.or-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: 10px;
+}
+.sign-up-button {
+  width: 206px;
+  height: 48px;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 2.67px;
+  color: #000000;
+}
+
+.line-image {
+  width: 126.5px;
+}

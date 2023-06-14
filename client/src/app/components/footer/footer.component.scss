@@ -1,0 +1,21 @@
+.footer-section {
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    gap:40px;
+    display: flex;
+    justify-content: center;
+    padding: 25px 0px 25px 0px;
+    align-items: center;
+    height: 84px;
+    background-color: rgba(232, 240, 241, 0.4196078431);
+    button{
+        background-color: rgba(232, 240, 241, 0.4196078431);
+        border: none;
+        font-weight: 200;
+        font-size: 24px;
+        line-height: 22px;
+        letter-spacing: 1.92px;
+        cursor: pointer;
+    }
+ }

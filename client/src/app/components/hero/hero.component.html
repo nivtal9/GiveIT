@@ -1,0 +1,15 @@
+ <div class="home-page-img">
+  <div class="textFloating">
+    <h1 class="text">
+      Welcome to Give-It<br /><br />
+      We are a grassroots & entirely nonprofit movement of people who are giving
+      and getting stuff for free in our own Towns.<br /><br />
+    </h1>
+    <h1>
+      <a class="cursor" (click)="isModalOpen = !isModalOpen">Sign up</a> now to publish
+      your own item
+    </h1>
+  </div>
+</div>
+
+<app-sign-in-modal *ngIf="isModalOpen"(closeClicked)="closeSignInModal()"></app-sign-in-modal>

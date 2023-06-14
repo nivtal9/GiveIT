@@ -1,0 +1,39 @@
+<div class="shadowBox">
+    <div class="container">
+        <div class="inner-container">
+            <p class="edit-header">EDIT YOUR PROFILE</p>
+            <div class="form-container">
+              <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="inputs-container">
+                    <div class="fixed-input">
+                        <div><p>Full Name: </p></div>
+                        <input matInput type="text" formControlName="fullName" placeholder="{{this.user.fullName}}" />
+                        <mat-error *ngIf="
+                            form.get('fullName')?.invalid && form.get('fullName')?.touched
+                          ">Your name does not look right</mat-error>
+                    </div>
+                    <div class="fixed-input">
+                        <div><p>Email: </p></div>
+                        <input matInput type="text" formControlName="email" placeholder="{{this.user.email}}" />
+                        <mat-error *ngIf="form.get('email')?.invalid && form.get('email')?.touched">Your email does not look
+                          right</mat-error>
+                    </div>
+                    <div class="fixed-input">
+                        <div><p>Phone Number: </p></div>
+                        <input matInput type="text" formControlName="phoneNumber" placeholder="{{this.user.phoneNumber}}" />
+                        <mat-error *ngIf="
+                            form.get('phoneNumber')?.invalid &&
+                            form.get('phoneNumber')?.touched
+                          ">Your phone number does not look right</mat-error>
+                    </div>
+                </div>
+                  <div class="submit-container">
+                    <button class="submit-button" mat-raised-button type="submit" >
+                      SAVE DETAILS
+                    </button>
+                </div>
+              </form>
+            </div>
+          </div>
+    </div>
+</div>

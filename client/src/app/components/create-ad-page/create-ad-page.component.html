@@ -1,0 +1,190 @@
+<!-- <div class="shadowBox"> -->
+
+  <div class="container">
+    <div class="inner-container">
+      <div class="header-text">
+        <div class="create-item-header"></div>
+      </div>
+      <div class="flex-createItem">
+        <div class="form-container">
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="inputs-container">
+              <div class="headers">
+              <mat-form-field>
+                <input
+                  matInput
+                  type="text"
+                  formControlName="name"
+                  placeholder="Item Title"
+                  class="itemTitle"
+                />
+                <mat-error *ngIf="form.get('name')?.hasError('required')">
+                  Name is required.
+                </mat-error>
+                <mat-error *ngIf="form.get('name')?.hasError('maxlength')">
+                  Max length is 50.
+                </mat-error>
+                <mat-error *ngIf="form.get('name')?.hasError('minlength')">
+                  Max length is 2.
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <textarea
+                  matInput
+                  placeholder="Description"
+                  formControlName="details"
+                >
+                </textarea>
+                <mat-error *ngIf="form.get('details')?.hasError('required')">
+                  Comment is required.
+                </mat-error>
+                <mat-error *ngIf="form.get('details')?.hasError('maxlength')">
+                  Max length is 200.
+                </mat-error>
+              </mat-form-field>
+            </div>
+              <div class="select-categories">
+                <mat-form-field appearance="fill" Class="select-field">
+                  <mat-label>Category</mat-label>
+                  <mat-select formControlName="category">
+                    <mat-option
+                      *ngFor="let category of categories$ | async"
+                      [value]="category.id"
+                      (onSelectionChange)="onCategoryChange(category)"
+                    >
+                      {{ category.name }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="fill" Class="select-field">
+                  <mat-label>Sub Category</mat-label>
+                  <mat-select formControlName="subCategory">
+                    <mat-option
+                      *ngFor="let subCategory of selectedCategory.subCategories"
+                      [value]="subCategory.id"
+                    >
+                      {{ subCategory.name }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="select-status-location">
+                <mat-form-field appearance="fill" Class="select-field">
+                  <mat-label>Status</mat-label>
+                  <mat-select formControlName="status">
+                    <mat-option
+                      *ngFor="let status of statuses$ | async"
+                      [value]="status.id"
+                    >
+                      {{ status.condition }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="fill" Class="select-field">
+                  <mat-label>Location</mat-label>
+                  <mat-select formControlName="location">
+                    <mat-option
+                      *ngFor="let location of locations$ | async"
+                      [value]="location.id"
+                    >
+                      {{ location.area }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="size-detailes-container">
+                <mat-form-field>
+                  <input
+                    matInput
+                    type="text"
+                    formControlName="width"
+                    placeholder="Item Width"
+                  />
+                  <mat-error *ngIf="form.get('width')?.hasError('required')">
+                    Width is required.
+                  </mat-error>
+                  <mat-error
+                    *ngIf="
+                      form.get('width')?.invalid && form.get('width')?.touched
+                    "
+                  >
+                    Only numbers please.
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                  <input
+                    matInput
+                    type="text"
+                    formControlName="height"
+                    placeholder="Item Height"
+                  />
+                  <mat-error *ngIf="form.get('height')?.hasError('required')">
+                    Height is required.
+                  </mat-error>
+                  <mat-error
+                    *ngIf="
+                      form.get('height')?.invalid && form.get('height')?.touched
+                    "
+                  >
+                    Only numbers please.
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                  <input
+                    matInput
+                    type="text"
+                    formControlName="length"
+                    placeholder="Item Length"
+                  />
+                  <mat-error *ngIf="form.get('length')?.hasError('required')">
+                    Length is required.
+                  </mat-error>
+                  <mat-error
+                    *ngIf="
+                      form.get('length')?.invalid && form.get('length')?.touched
+                    "
+                  >
+                    Only numbers please.
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div>
+                <ngx-dropzone class="size" (change)="onSelect($event)">
+                  <ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
+                  <ngx-dropzone-image-preview
+                    *ngFor="let f of files"
+                    ngProjectAs="ngx-dropzone-preview"
+                    [file]="f"
+                    [removable]="true"
+                    (removed)="onRemove(f)"
+                  >
+                    <ngx-dropzone-label> ({{ f.type }})</ngx-dropzone-label>
+                  </ngx-dropzone-image-preview>
+                </ngx-dropzone>
+              </div>
+            </div>
+            <div class="submit-container">
+              <button
+                class="submit-button"
+                mat-raised-button
+                type="submit"
+                [disabled]="form.invalid"
+              >
+                CREATE AD
+              </button>
+            </div>
+            <br />
+            <button class="submit-button" routerLink="/home-page-components">
+              BACK TO HOME PAGE
+            </button>
+          </form>
+        </div>
+        <!-- <div class="sideImg">
+          <img src="assets\home-page\0_PROD-Woman-searching-through-full-shelves.jpg">
+
+        </div> -->
+      </div>
+
+    </div>
+  </div>
+<!-- </div> -->

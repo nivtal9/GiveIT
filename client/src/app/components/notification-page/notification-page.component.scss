@@ -1,0 +1,121 @@
+.container {
+  text-align: center;
+  justify-content: center;
+}
+.inner-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.create-notification, .delete-notification{
+  width:50%;
+  height:100vh;
+}
+.create-notification:hover, .delete-notification:hover{
+  background-color:rgba(65, 135, 137, 0.1215686275);
+}
+
+.header-delete, .header-create{
+  padding-top:300px ;
+  padding-bottom: 30px;
+  font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+}
+input {
+  height: 52px;
+  border: 0.5px solid #000000;
+  border: none;
+  border-bottom: 1px solid black;
+  opacity: 0.5;
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 1.97px;
+  outline: none;
+}
+input:focus {
+  opacity: 1;
+}
+input::-webkit-input-placeholder {
+  align-items: center;
+}
+h2 {
+  height: 26px;
+  font-weight: 200;
+  font-size: 24px;
+  line-height: 26px;
+  text-align: center;
+  letter-spacing: 2.67px;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 0;
+}
+
+.submit-button {
+  width: 430px;
+  height: 48px;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 2.67px;
+  color: white;
+  background: #979797;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 100px;
+}
+
+.titles-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 14px;
+}
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: 35px;
+}
+.submit-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.sign-up-button {
+  width: 206px;
+  height: 48px;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 2.67px;
+  color: #000000;
+}
+
+.mdc-text-field--no-label:not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mat-mdc-form-field-infix {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  width: 401px;
+}
+
+.email{
+  width:430px;
+}
+
+.select-categories{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}

@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="modal">
+    <div class="modal-container">
+      <span class="close" (click)="closeSignInModal()">&times;</span>
+      <div class="modal-content">
+        <div class="titles-container">
+          <h2>SIGN IN</h2>
+        </div>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="inputs-container">
+            <input
+              matInput
+              type="text"
+              formControlName="username"
+              placeholder="UserName"
+            />
+            <mat-error
+              *ngIf="
+                form.get('username')?.hasError('required') &&
+                form.get('password')?.touched
+              "
+            >
+              User Name is required.
+            </mat-error>
+            <mat-error *ngIf="form.get('username')?.hasError('maxlength')">
+              User Name Max length is 50.
+            </mat-error>
+            <mat-error *ngIf="form.get('username')?.hasError('minlength')">
+              User Name Max length is 2.
+            </mat-error>
+            <input
+              matInput
+              type="password"
+              formControlName="password"
+              placeholder="Password"
+            />
+            <mat-error
+              *ngIf="
+                form.get('password')?.hasError('required') &&
+                form.get('password')?.touched
+              "
+            >
+              Password is required.
+            </mat-error>
+            <mat-error *ngIf="form.get('password')?.hasError('maxlength')">
+              Password Max length is 16.
+            </mat-error>
+            <mat-error *ngIf="form.get('password')?.hasError('minlength')">
+              Password Max length is 6.
+            </mat-error>
+          </div>
+          <div class="login-container">
+            <button
+              class="login-button cursor"
+              mat-raised-button
+              type="submit"
+              [disabled]="form.invalid"
+            >
+              LOGIN
+            </button>
+          </div>
+        </form>
+        <p class="text_signUp">or sign up</p>
+        <button
+          (click)="closeSignInModal()"
+          routerLink="/registration-page-components"
+          class="sign-up-button cursor"
+        >
+          SIGN UP
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

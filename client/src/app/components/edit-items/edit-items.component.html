@@ -1,0 +1,86 @@
+<div *ngIf="(items$ | async) as items">
+    <div *ngIf="items.length; else res">
+
+    <div class="flex-edit-items">
+        <button class="previous" [disabled]="itemIndex === 0" (click)="moveCard(false)"><img src="assets\home-page\preview.png" /></button>
+         <div class="container">
+            <div class="inner-container">
+                <p class="edit-header">YOUR ITEM'S</p>
+                <div class="form-container">
+                    <form [formGroup]="form" (ngSubmit)="onSubmit(items[itemIndex])">
+                        <div class="inputs-container">
+                            <div class="display-details">
+                                <div class="details-item">
+                                    <mat-form-field>
+                                        <p>Name: </p>
+                                        <input matInput type="text" formControlName="name"
+                                            [ngModel]="items[itemIndex]?.name" />
+                                        <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.touched">Your Item
+                                            Title
+                                            does not look right</mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <p>Details: </p>
+                                        <textarea matInput type="text" formControlName="details"
+                                            [ngModel]="items[itemIndex]?.details"></textarea>
+                                        <mat-error *ngIf="form.get('details')?.hasError('required')">
+                                            Comment is required.</mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="img-item">
+                                    <img src={{items[itemIndex].images[0]?.imageUrl}} alt="assets\home-page\wrong.svg"/>
+                                </div>
+                            </div>
+                          
+                            <div class="measurements">
+                                    <mat-form-field>
+                                        <p>Width: </p>
+                                        <input matInput type="text" formControlName="width"
+                                            [ngModel]="items[itemIndex]?.width" />
+                                        <mat-error *ngIf="form.get('width')?.invalid && form.get('width')?.touched">Your
+                                            Item
+                                            Width
+                                            does not look right</mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <p>Height: </p>
+                                        <input matInput type="text" formControlName="height"
+                                            [ngModel]="items[itemIndex]?.height" />
+                                        <mat-error
+                                            *ngIf="form.get('height')?.invalid && form.get('height')?.touched">Your
+                                            Item
+                                            Height does not look right</mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <p>Length: </p>
+                                        <input matInput type="text" formControlName="length"
+                                            [ngModel]="items[itemIndex]?.length" />
+                                        <mat-error
+                                            *ngIf="form.get('length')?.invalid && form.get('length')?.touched">Your
+                                            Item
+                                            Length does not look right</mat-error>
+                                    </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="submit-container">
+                            <button class="submit-button" mat-raised-button type="submit" [disabled]="form.invalid">
+                                SAVE DETAILS
+                            </button>
+                            <div class="submit-container">
+                                <button class="submit-button" (click)="deleteItem(items[itemIndex])">
+                                    delete
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+             <button class="next" [disabled]="items.length === 1 || items.length - 1 === itemIndex" (click)="moveCard(true)"><img src="assets\home-page\nextnext.png" /></button>
+         </div>
+    </div>
+    <ng-template #res>
+        <div class="no-items">No Items Detected</div>
+        <div class="img-noContent"><img src="assets\home-page\wrong.svg"/></div>
+    </ng-template>
+</div>

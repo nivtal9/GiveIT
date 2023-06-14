@@ -1,0 +1,21 @@
+<div class="favorite-modal">
+  <div *ngIf="isFavoriteEmpty">
+    <p class="favorite-header">THERE ARE NO FAVORITE'S</p>
+  </div>
+  <div *ngIf="!isFavoriteEmpty">
+    <div class="favorite-header">
+      <p>YOUR FAVORITE ITEM'S</p>
+    </div>
+    <div *ngFor="let favorite of favorites; index as i">
+      <div *ngIf="(i<2)">
+        <div class="border-favorite">
+          <p>{{ favorite.name }}</p>
+          <img class="img-favorite" src="{{ favorite.images[0].imageUrl }}" />
+        </div>
+      </div>
+    </div>
+    <div class="see-more">
+      <button>SEE MORE</button>
+    </div>
+  </div>
+</div>

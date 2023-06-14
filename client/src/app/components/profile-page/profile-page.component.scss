@@ -1,0 +1,58 @@
+.shadowBox {
+    box-shadow: -1px 0px 3px 5px rgb(137 165 168 / 49%);
+
+    // margin: 115px 230px;
+    .profile-page {
+        display: flex;
+        justify-content: space-between;
+
+        .leftDiv {
+            height: 100vh;
+            width: 480px;
+            background-color: #e8f0f1;
+            text-align: center;
+        }
+
+        .cursor {
+            cursor: pointer;
+        }
+
+        .rightDiv {
+            height: 100vh;
+            width: 100%;
+            background-color: white;
+        }
+
+        .img-profile {
+            height: 150px;
+            padding: 70px 70px 30px 70px;
+        }
+
+        .profile-header {
+            font-weight: bold;
+            text-transform: capitalize;
+            font-size: 30px;
+            padding-bottom: 20px;
+        }
+
+        .my-profile-button,
+        .my-profile-button-highlighted {
+            width: 100%;
+            padding: 30px;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        .my-profile-button:hover {
+            padding-right: 25px;
+            background-color: white;
+        }
+
+        .my-profile-button-highlighted {
+            background-color: white;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="api" namespace="api.Models">
+	<class name="User" table="users">
+		<id name="Id">
+			<generator class="identity" />
+		</id>
+		<property name="Username"/>
+		<property name="PasswordHash" />
+		<property name="PasswordSalt" />
+		<property name="FullName"/>
+		<property name="PhoneNumber"/>
+		<property name="Email"/>
+		<set name="Items">
+			<key column="UserId" />
+			<one-to-many class="Item" />
+		</set>
+		
+		<set name="FavoriteItems" table="favorites">
+			<key column="UserId" />
+			<many-to-many class="Item" column="ItemId" />
+		</set>
+	</class>
+</hibernate-mapping>

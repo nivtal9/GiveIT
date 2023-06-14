@@ -1,0 +1,43 @@
+.favorite-modal{
+    width: 618px;
+    height: 518px;
+    margin-left: auto;
+    margin-right: 0;
+    position: absolute;
+    background-color: white;
+    right: 200px;
+    justify-content: center;
+    z-index: 1;
+    button{
+        font-size: 18px;
+        line-height: 20px;
+        text-align: center;
+        letter-spacing: 2.67px;
+        background-color: white;
+        padding: 8px;
+        cursor: pointer;
+    }
+    .see-more{
+        margin: 0;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .border-favorite{
+        padding:10px 50px 10px 50px;
+        margin-bottom: 10px;
+        border:1px solid black;
+        align-items: center;
+    }
+    .favorite-header{
+        text-align: center;
+        font-size: 24px;
+        padding:20px 0px 20px 0px;
+    }
+    .img-favorite{
+        padding-top: 10px;
+        width:25%;
+        height:90px;
+    }
+}

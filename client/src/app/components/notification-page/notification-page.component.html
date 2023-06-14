@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="inner-container">
+    <div class="create-notification">
+      <p class="header-create">CREATE NOTIFICATION</p>
+      <div class="form-container">
+        <form [formGroup]="createForm">
+          <div class="inputs-container">
+            <mat-form-field class="email">
+              <input matInput type="text" formControlName="email" placeholder="Email Address" />
+              <mat-error *ngIf="
+                  createForm.get('email')?.invalid &&
+                  createForm.get('email')?.touched
+                ">Your Email does not look right</mat-error>
+            </mat-form-field>
+            <div class="select-categories">
+              <mat-form-field appearance="fill" Class="select-field category">
+                <mat-label>Category</mat-label>
+                <mat-select formControlName="category">
+                  <mat-option *ngFor="let category of categories$ | async" [value]="category.id"
+                    (onSelectionChange)="onCategoryChange(category)">
+                    {{ category.name }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field appearance="fill" Class="select-field">
+                <mat-label>Sub Category</mat-label>
+                <mat-select formControlName="subCategory">
+                  <mat-option *ngFor="let subCategory of selectedCategory.subCategories" [value]="subCategory.id">
+                    {{ subCategory.name }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="submit-container">
+            <button class="submit-button" mat-raised-button type="submit" [disabled]="createForm.invalid"
+              (click)="createNotification()">
+              SUBSCRIBE
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="delete-notification">
+      <p class="header-delete">DELETE NOTIFICATION</p>
+      <div class="form-container">
+        <form [formGroup]="deleteForm">
+          <div class="inputs-container">
+            <mat-form-field class="email">
+              <input matInput type="text" formControlName="email" placeholder="Email Address" />
+              <mat-error *ngIf="
+                  deleteForm.get('email')?.invalid &&
+                  deleteForm.get('email')?.touched
+                ">Your Email does not look right</mat-error>
+            </mat-form-field>
+            <div class="select-categories">
+              <mat-form-field appearance="fill" Class="select-field category">
+                <mat-label>Category</mat-label>
+                <mat-select formControlName="category">
+                  <mat-option *ngFor="let category of categories$ | async" [value]="category.id"
+                    (onSelectionChange)="onCategoryChange(category)">
+                    {{ category.name }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field appearance="fill" Class="select-field">
+                <mat-label>Sub Category</mat-label>
+                <mat-select formControlName="subCategory">
+                  <mat-option *ngFor="let subCategory of selectedCategory.subCategories" [value]="subCategory.id">
+                    {{ subCategory.name }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="submit-container">
+            <button class="submit-button" mat-raised-button type="submit" [disabled]="deleteForm.invalid"
+              (click)="deleteNotification()">
+              REMOVE SUBSCRIPTION
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>

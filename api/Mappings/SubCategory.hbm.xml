@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="api" namespace="api.Models">
+	<class name="SubCategory" table="subcategories">
+		<id name="Id">
+			<generator class="identity" />
+		</id>
+		<property name="Name"/>
+		<many-to-one name="Category" column="CategoryId" class="Category" />
+		<set name="Items">
+			<key column="SubCategoryId" />
+			<one-to-many class="Item" />
+		</set>
+		<set name="Notifications" cascade="all-delete-orphan">
+			<key column="SubCategoryId" />
+			<one-to-many class="Notification" />
+		</set>
+	</class>
+</hibernate-mapping>

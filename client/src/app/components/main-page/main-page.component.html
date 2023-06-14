@@ -1,0 +1,22 @@
+<div class="home-page-img">
+    <div class="header">
+        Join Us<br>
+        Come Give And Get Items For Free<br /><br />
+    </div>
+    <div class="floating">
+        <div class="createItem">
+            <h1 class="text" (click)="checkUser()">
+            CREATE ITEM
+            </h1>
+        </div>
+        <div class="homePage">
+            <h1 class="text" routerLink="/home-page-components">
+            HOME PAGE
+            </h1>
+        </div>
+    </div>
+</div>
+
+<app-sign-in-modal *ngIf="isModalOpen" (closeClicked)="closeSignInModal()"></app-sign-in-modal>
+
+       

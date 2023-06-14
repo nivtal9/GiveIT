@@ -1,0 +1,14 @@
+<app-hero></app-hero>
+<app-filter-bar></app-filter-bar>
+
+<div class="cards-section">
+    <div class="cards-header">
+        <p>OUR ITEMS</p>
+    </div>
+    <app-items-card [itemIntoCards]="items$ | async" class="cards-div"></app-items-card>
+</div>
+
+<app-about-us></app-about-us>
+<app-footer></app-footer>
+
+

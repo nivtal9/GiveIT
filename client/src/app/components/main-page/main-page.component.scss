@@ -1,0 +1,41 @@
+.home-page-img{
+    background-image: url('../../../assets/home-page/4.jpg');
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-self: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    .header{
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 4rem;
+        padding:0px 50px;
+    }
+    .floating{
+        display: flex;
+        justify-content: space-between;
+        gap:20px;
+        text-align: center;
+    }
+    .createItem, .homePage {
+        color: black;
+        font-weight: normal;
+        box-shadow: -1px 0px 3px 5px #89a5a87d
+    }
+    .text{
+      padding: 30px;
+      letter-spacing: 2px;
+      background:#ededede0;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .cursor{
+      cursor: pointer;
+    }
+  }
+
+
+

@@ -1,0 +1,25 @@
+<div class="shadowBox">
+    <div class="profile-page">
+        <div class="leftDiv">
+            <img (click)="editItems()" class="img-profile cursor" src="assets\main-page\loginIcon.png" />
+            <div>
+                <p class="profile-header">
+                    <!-- Hello, {{this.user.fullName.substring(0,1).toUpperCase()}}{{this.user.fullName.substring(6,7).toUpperCase()}} -->
+                    Hello, {{this.user.fullName}}
+                </p>
+            </div>
+            <div>
+                <button [ngClass]="isEditProfile? 'my-profile-button-highlighted' : 'my-profile-button'"
+                    (click)="editProfile()">Edit Profile</button>
+            </div>
+        </div>
+        <div class="rightDiv">
+            <div *ngIf="isEditProfile">
+                <app-edit-user-profile></app-edit-user-profile>
+            </div>
+            <div *ngIf="!isEditProfile">
+                <app-edit-items></app-edit-items>
+            </div>
+        </div>
+    </div>
+</div>

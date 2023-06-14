@@ -1,0 +1,40 @@
+<div class="modal">
+  <div class="close" (click)="closeSignInModal()">&times;</div>
+  <div class="item">
+    <div class="itemDetail">
+      <p class="itemName">{{ valueFromItemCard.name }}</p>
+    </div>
+    <div class="item-size">
+      <p><b>Height:</b> {{ valueFromItemCard.height }}</p>
+      <p><b>Width:</b> {{ valueFromItemCard.width }}</p>
+      <p><b>Length:</b> {{ valueFromItemCard.length }}</p>
+    </div>
+    <br>
+    <div class="flex-images">
+      <button (click)="previousImage()"><img src="assets\home-page\previous.png"/></button>
+      <div *ngFor="let image of valueFromItemCard.images; index as i">
+        <div *ngIf="i == imageNumber">
+          <img src="{{ image.imageUrl }}" class="imgItemModal" alt="assets\home-page\wrong.svg" />
+        </div>
+      </div>
+      <button (click)="nextImage()"><img src="assets\home-page\next.png"/></button>
+    </div>
+    <div class="flex">
+      <p class="title"><b>Item Status:</b></p>
+      <p class="item-status">{{ valueFromItemCard.status.condition }}</p>
+    </div>
+    <div class="flex">
+      <p class="title"><b>Update Date:</b></p>
+      <p class="item-updateDate">
+        {{ valueFromItemCard.creationDate.toString().slice(0, 10) }}
+      </p>
+    </div>
+    <div class="flex">
+      <p class="title"><b>Description:</b></p>
+      <p class="item-Description">{{ valueFromItemCard.details }}</p>
+    </div>
+    <button class="ADD-btn" mat-raised-button (click)="openDialog()">
+      Show Contact Details<mat-icon>perm_identity</mat-icon>
+    </button>
+  </div>
+</div>

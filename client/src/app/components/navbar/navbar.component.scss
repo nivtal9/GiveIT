@@ -1,0 +1,97 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 122px;
+    background-color: white;
+    .navbar_left, .navbar_right{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 32px;
+        list-style: none;
+        font-weight: 200;
+        font-size: 23px;
+      }
+      ul {
+        all: unset;
+      }
+      li a {
+        text-decoration: none;
+        color: black;
+      }
+      .cursor{
+        cursor: pointer;
+      }
+      .login-icon{
+        height:50px;
+      }
+      .logo{
+        font-size: 36px;
+        font-weight: bold;
+      }
+      // .active{
+      //   border-bottom: 1px solid #03a9f4;
+      // }
+      .create-item{
+        background-color: #4187891f;
+        padding: 10px;
+        font-weight: bold;
+      }
+      .favorites{
+        background-color: #4187891f;
+        padding: 10px;
+        font-weight: bold;
+      }
+      .display-profile-icon{
+        display: flex;
+        justify-content: space-between;
+        gap:10px;
+        align-items: center;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+      
+      .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+      
+      .dropdown-content a:hover {
+        cursor: pointer;
+        background-color: #ddd;
+      }
+      
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      
+      .dropdown {
+        float: left;
+        overflow: hidden;
+      }
+      
+      .dropdown .dropbtn {
+        cursor: pointer;
+        font-size: 23px;
+        border: none;
+        outline: none;
+        color: black;
+        padding: 14px 0px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+      }
+}
+

@@ -1,0 +1,43 @@
+.form-container {
+    display: flex;
+    justify-content:center;
+    gap:10px;
+}
+
+.filter-bar {
+    padding-top: 1.5%;
+    box-shadow: 5px 10px 18px #888888;
+}
+
+.cancel-filters {
+    align-items: center;
+    text-align: center;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    gap:10px;
+    padding-bottom: 20px;
+}
+
+.clearFilter{
+    font-size: 25px;
+    border-radius: 20px;
+    border: 1px solid black;
+    width: 7%;
+}
+
+.mat-mdc-form-field-infix {
+    flex: auto;
+    min-width: 0;
+    width: 522px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+button {
+    background: transparent;
+    color: red;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}

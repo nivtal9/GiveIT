@@ -1,0 +1,32 @@
+.aboutUs-section{
+    padding: 79px 370px 79px 370px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 136px;
+    .aboutUs-header{
+        text-align: left;
+        padding-bottom: 35px;
+        font-style: normal;
+        font-size: 40px;
+        line-height: 35px;
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .aboutUs-description{
+        font-style: normal;
+        font-size: 30px;
+        line-height: 30px;
+        letter-spacing: 2.14px;
+        width: 569px;
+        height: 100px;
+        padding-bottom:25px;
+        text-align: center;
+    }
+    .rightDiv-AboutUs img{
+        height:350px;
+        width:700px;
+    }
+}

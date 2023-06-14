@@ -1,0 +1,29 @@
+.home-page-img{
+  background-image: url('../../../assets/home-page/4.jpg');
+  display: flex;
+  flex-direction: column;
+  height: 775px;
+  align-self: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+  .textFloating {
+    height:400px;
+    width:900px;
+    text-align: center;
+    color: black;
+    background:#ededede0;
+    opacity: 0.7;
+    margin-top: 16px;
+    font-weight: normal;
+  }
+  .text{
+    padding-top: 40px;
+    font-family: 'Unbounded', cursive;
+    letter-spacing: 2px;
+  }
+  .cursor{
+    cursor: pointer;
+  }
+}

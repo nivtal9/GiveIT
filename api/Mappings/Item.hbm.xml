@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="api" namespace="api.Models">
+	<class name="Item" table="items">
+		<id name="Id" generator="native"/>
+		<property name="Name"/>
+		<property name="Height"/>
+		<property name="Length"/>
+		<property name="Width"/>
+		<property name="Details"/>
+		<property name="CreationDate"/>
+		<many-to-one name="SubCategory" column="SubCategoryId" class="SubCategory"/>
+		<many-to-one name="User" column="UserId" class="User"/>
+		<many-to-one name="Location" column="LocationId" class="Location"/>
+		<many-to-one name="Status" column="StatusId" class="Status"/>
+		<set name="Images" cascade="all-delete-orphan">
+			<key column="ItemId" />
+			<one-to-many class="Image" />
+		</set>
+
+		<set name="FavoritedBy" table="favorites">
+			<key column="ItemId" />
+			<many-to-many class="User" column="UserId" />
+		</set>
+	</class> 
+</hibernate-mapping>

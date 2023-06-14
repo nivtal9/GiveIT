@@ -1,0 +1,113 @@
+<div class="container">
+  <div class="inner-container">
+    <h2>CREATE ACCOUNT</h2>
+    <div class="form-container">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="inputs-container">
+          <input
+            matInput
+            type="text"
+            formControlName="username"
+            placeholder="UserName"
+          />
+          <mat-error
+            *ngIf="
+              form.get('username')?.hasError('required') &&
+              form.get('username')?.touched
+            "
+          >
+            User Name is required.
+          </mat-error>
+          <mat-error *ngIf="form.get('username')?.hasError('maxlength')">
+            User Name Max length is 50.
+          </mat-error>
+          <mat-error *ngIf="form.get('username')?.hasError('minlength')">
+            User Name Max length is 2.
+          </mat-error>
+          <input
+            matInput
+            type="password"
+            formControlName="password"
+            placeholder="Password"
+          />
+          <mat-error
+            *ngIf="
+              form.get('password')?.hasError('required') &&
+              form.get('password')?.touched
+            "
+          >
+            Password is required.
+          </mat-error>
+          <mat-error *ngIf="form.get('password')?.hasError('maxlength')">
+            Password Max length is 16.
+          </mat-error>
+          <mat-error *ngIf="form.get('password')?.hasError('minlength')">
+            Password Max length is 6.
+          </mat-error>
+          <input
+            matInput
+            type="text"
+            formControlName="fullName"
+            placeholder="Full Name"
+          />
+          <mat-error
+            *ngIf="
+              form.get('fullName')?.hasError('required') &&
+              form.get('fullName')?.touched
+            "
+          >
+            Name is required.
+          </mat-error>
+          <mat-error *ngIf="form.get('fullName')?.hasError('maxlength')">
+            Name Max length is 50.
+          </mat-error>
+          <mat-error *ngIf="form.get('fullName')?.hasError('minlength')">
+            Name Max length is 2.
+          </mat-error>
+          <input
+            matInput
+            type="text"
+            formControlName="email"
+            placeholder="Email Address"
+          />
+          <mat-error
+            *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
+            >Your email does not look right</mat-error
+          >
+          <input
+            matInput
+            type="text"
+            formControlName="phoneNumber"
+            placeholder="Phone Number"
+          />
+          <mat-error *ngIf="form.get('phoneNumber')?.hasError('required')&&form.get('phoneNumber')?.touched
+          ">
+            Phone Number is required.
+          </mat-error>
+          <mat-error *ngIf="form.get('phoneNumber')?.hasError('maxlength')">
+            Phone Number too long.
+          </mat-error>
+          <mat-error *ngIf="form.get('phoneNumber')?.hasError('minlength')">
+            Phone Number too short.
+          </mat-error>
+          <mat-error *ngIf="form.get('phoneNumber')?.hasError('pattern')">
+            Phone Number contains only numbers.
+          </mat-error>
+        </div>
+        <div class="submit-container">
+          <button
+            class="submit-button"
+            mat-raised-button
+            type="submit"
+            [disabled]="form.invalid"
+          >
+            SUBMIT
+          </button>
+          <button class="back-button" routerLink="/home-page-components">
+            BACK TO HOME PAGE
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

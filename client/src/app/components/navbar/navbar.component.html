@@ -1,0 +1,36 @@
+<div class="navbar">
+  <ul class="navbar_left">
+    <li>
+      <p routerLink="/main-page-components" class="logo cursor">GIVE IT</p>
+    </li>
+    <li class="dropdown" *ngFor="let category of categories$ | async">
+      <button class="dropbtn">{{category.name}}</button>
+      <div class="dropdown-content">
+        <a *ngFor="let subcategory of category.subCategories" (click)="filterSubCategory(subcategory)">
+          {{subcategory.name}} 
+        </a>
+      </div>
+    </li>
+  </ul>
+  <div>
+    <ul class="navbar_right">
+      <p (click)="checkUser()" class="cursor create-item">Create Item +</p>
+      <p class="cursor favorites" routerLink="/notification-page-components">Subscribe <i class="fa fa-bell cursor"></i></p>
+      <!-- <p class="favorites">Favorites <i class="fa-regular fa-heart cursor" (click)="onFavoriteClick()"></i></p> -->
+      <p class="favorites cursor" routerLink="/favorite-item-page-components">Favorites <i class="fa-regular fa-heart cursor"></i></p>
+
+      <div *ngIf="isLoggedIn$ | async; else Login">
+        <div class="display-profile-icon">
+          <a routerLink="/profile-page-components"><img src="assets\main-page\loginIcon.png" class="cursor login-icon"/></a>
+          <p (click)="logout()" class="cursor">Logout</p>
+        </div>
+      </div>
+      <ng-template #Login>
+        <p (click)="isModalOpen = !isModalOpen" class="cursor">Login</p>
+      </ng-template>
+    </ul>
+  </div>
+
+<app-favorites *ngIf="toggleFavorite" [style.display]="isFavoriteVisible ? '' : 'none'"></app-favorites>
+<app-sign-in-modal *ngIf="isModalOpen"(closeClicked)="closeSignInModal()"></app-sign-in-modal>
+
